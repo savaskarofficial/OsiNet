@@ -1,0 +1,57 @@
+name: Bug Report
+description: Report a bug in OsiNet
+labels: ["bug"]
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      placeholder: "e.g. Samsung Galaxy S23, Pixel 7 Pro"
+    validations:
+      required: true
+  - type: input
+    id: android-version
+    attributes:
+      label: Android Version
+      placeholder: "e.g. Android 14, API 34"
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: OsiNet Version
+      placeholder: "e.g. 1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: Which tool?
+      placeholder: "e.g. Username Search, Port Scanner, Auto Recon"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      placeholder: Describe the bug clearly — what you expected vs what actually happened.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open tool X
+        2. Enter target Y
+        3. Tap scan
+        4. See error Z
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      placeholder: Attach screenshots if relevant.
+    validations:
+      required: false
