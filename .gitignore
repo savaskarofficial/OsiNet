@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Build
+build/
+*.class
+*.dex
+*.log
+
+# Source (closed-source — never commit)
+src/
+app/src/
+*.kt
+*.java
+*.gradle*
+gradlew*
+gradle/
+local.properties
+*.keystore
+*.jks

@@ -1,0 +1,31 @@
+name: Feature Request
+description: Suggest a new tool or improvement
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - New Tool
+        - Improvement to Existing Tool
+        - UI/UX
+        - Performance
+        - Security
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature
+      placeholder: What would you like added or changed? Why would it be useful for OSINT investigations?
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Suggested API / data source
+      placeholder: If you know of a free public API or data source that could power this feature, mention it here.
+    validations:
+      required: false
