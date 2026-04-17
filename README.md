@@ -184,6 +184,6 @@ The developer assumes no liability for misuse of this software.
 ---
 
 <p align="center">
-  <strong>Built with 🇧🇩 in Dhaka</strong><br/>
+  <strong>Crafted by Undercover IT Firm, Dhaka</strong><br/>
   <sub>© 2024-2026 Undercover IT Firm. All rights reserved.</sub>
 </p>
