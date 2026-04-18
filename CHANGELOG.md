@@ -2,44 +2,33 @@
 
 All notable changes to OsiNet will be documented in this file.
 
+## [1.1.0] — 2026-04-19
+
+### 🔧 Critical Fixes — Zero False Positives
+
+- **Username Search / Social Profiler / Person Recon / Digital Footprint** — Completely eliminated false-positive detections. Replaced unreliable `http.head()` HTML scraping with API-first `PlatformValidator` using 22 verified platforms across 3 reliability tiers. Garbage usernames now correctly return 0 results instead of 7+ fake matches.
+- **Wayback Machine** — Fixed `limit=50` cap that showed wrong first/last dates and fabricated "Total: 50". Now uses 4 separate CDX queries for accurate first/last snapshots, approximate total (CDX pages × 150K), and 100 most-recent deduped snapshots. Added `matchType=exact` to prevent prefix-match false positives.
+- **WHOIS Lookup** — Complete rewrite. Now handles both domains AND IPs. Uses RDAP (RFC 9082) as primary with direct registry URLs (VeriSign, APNIC, ARIN, RIPE auto-routed). TCP port 43 kept as fallback only. Shows structured results — no more raw text dumps or browser redirects.
+- **Traceroute** — Fixed RTT showing `* ms` on every intermediate hop. Now measures wall-clock RTT via `System.nanoTime()`. GeoIP resolves live per-hop instead of after trace completes. Whois button restored with in-app IP WHOIS auto-lookup.
+- **Breach Check** — Removed broken `breachdirectory.org` API. Replaced with Proton Sentinel breach API.
+- **Git Secrets** — Rewritten as dork generator. 40+ secret patterns × 3 backends.
+- **Crypto Recon** — TRX lookup switched to TronGrid API.
+- **MAC Lookup** — Strict regex validation before processing.
+
+### 🚀 Performance
+
+- **120Hz display support** — Opts in to highest available refresh rate on high-refresh panels.
+- **Eliminated 4× full-screen overdraw** — Added `windowBackground` to themes.xml, removed redundant Surface wrapper.
+- **Home grid optimized** — Memoized filter, stable keys, `@Immutable` data classes, removed double-clip on 91 cards, disabled overscroll glow.
+
+### ✨ New Features
+
+- **Email Dorks** — 70+ dorks across 10 categories
+- **IP WHOIS via RDAP** — Auto-detects IP vs domain. Shows network name, CIDR, registrant, abuse contact from correct RIR (APNIC/ARIN/RIPE).
+- **Wayback Year/Month Filter** — FilterChip rows for year and month with live re-fetch.
+- **Phone Lookup** — Carrier prefix DB (BD/PK/IN/US/UK) with OSINT deep-links.
+
 ## [1.0.0] — 2026-04-17
 
 ### Initial Release
-
-**85+ OSINT tools across 5 categories — zero paid APIs.**
-
-#### Investigation (14 tools)
-- Auto Recon — multi-module automated reconnaissance
-- Digital Footprint — risk-scored presence analysis
-- Threat Intel — AlienVault OTX + URLhaus
-- Domain Age — WHOIS-based analysis
-- Google Dorks — 107 templates across 12 categories
-- Intel Extractor — link/email/phone/IP extraction
-- Cloud Bucket Hunter — AWS S3, Azure Blob, GCS enumeration
-- API Recon — 50+ endpoint probes with GraphQL introspection
-- Tracker ID OSINT — GA/FB pixel extraction
-- Reverse WHOIS — RDAP primary with fallbacks
-- Git Secrets — 40+ secret patterns × 3 backends
-- Paste Search — multi-platform paste OSINT
-- Shodan Lookup — free InternetDB API
-- IP Blacklist — 20 DNSBL checks
-
-#### Network Recon (21 tools)
-- Ping, Port Scanner (banner-based detection), DNS, WHOIS, Traceroute, Subnet Calculator, SSL Inspector, GeoIP, Reverse DNS, Redirect Tracer, Speed Test, Ping Sweep, Latency Monitor, ASN Lookup, Wake-on-LAN, DNS Propagation, Reverse IP, TLS Ciphers, ARP Table, Tor/Proxy Checker, Dark Web Search, MQTT IoT Recon
-
-#### Web Recon (16 tools)
-- Headers, Tech FP, Subdomains, CMS Detect, WAF Detect, Robots.txt, Crawler, Cert Transparency, HTTP Methods, CORS Test, Favicon Hash, Site Status, Wayback Machine (with year/month filter), Security.txt, Cookies, HTTP Diff
-
-#### Social / People OSINT (11 tools)
-- Person Recon, Social Profiler (22 verified + 14 manual), Username Search, Breach Check, Email OSINT, Email Dorks (70+), Phone Lookup (carrier DB + OSINT links), Email Header Analyzer, Name→Username, Reverse Image, People Dorks (80+)
-
-#### Utilities (20 tools)
-- Hash, Encoder, EXIF, MAC Lookup, Password Generator, WiFi Info, Device Info, User Agent, Text Analyzer, Meta Strip, JSON Format, IP Convert, Timestamp, cURL Gen, Regex Test, UUID, Port Lookup, Crypto Recon (BTC/ETH/LTC/TRX), Shadow Calculator, Infrastructure Map
-
-#### Platform Features
-- Case Manager with STIX 2.1 / JSON / CSV export
-- Bookmarks and scan history
-- SQLCipher AES-256 encrypted database
-- SOCKS5/HTTP proxy with Orbot/Tor integration
-- 120Hz display support
-- Configurable DNS, port scan, traceroute, crawler settings
+85+ OSINT tools across 5 categories — zero paid APIs. Full feature list in README.
