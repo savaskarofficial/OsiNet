@@ -20,7 +20,7 @@ body:
     id: app-version
     attributes:
       label: OsiNet Version
-      placeholder: "e.g. 1.0.0"
+      placeholder: "e.g. 1.0.7 (code 8), debug package"
     validations:
       required: true
   - type: input
@@ -53,5 +53,13 @@ body:
     attributes:
       label: Screenshots
       placeholder: Attach screenshots if relevant.
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted error or diagnostic details
+      description: Remove tokens, account data, private targets and case evidence before posting. Report security vulnerabilities privately using SECURITY.md.
+      render: text
     validations:
       required: false

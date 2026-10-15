@@ -1,39 +1,20 @@
-# Security Policy
+# Security policy
 
-## Reporting Vulnerabilities
+Report vulnerabilities privately through [Telegram](https://t.me/savaskarofficial) or the contact options at [Undercover IT Firm](https://undercoveritfirm.com). Do not post credentials, case evidence or exploitable details in public issues.
 
-If you discover a security vulnerability in OsiNet, please report it responsibly.
-
-**DO NOT** open a public GitHub issue for security vulnerabilities.
-
-Instead, contact us directly:
-
-- **Telegram:** [@savaskarofficial](https://t.me/savaskarofficial)
-- **Website:** [undercoveritfirm.com](https://undercoveritfirm.com)
-
-We will acknowledge receipt within 48 hours and provide a timeline for a fix.
+Include the exact APK version/package, device and Android version, affected feature, minimal reproduction steps and expected/observed impact. Use synthetic or redacted evidence. Avoid sending private keys or account tokens. Response timing is not guaranteed.
 
 ## Scope
 
-The following are in scope for security reports:
+- Unauthorized access to local case/history data or SQLCipher key material.
+- Unsafe file/report import/export, injection and component exposure.
+- Unexpected traffic leakage or a tool violating its configured network behavior.
+- Permission/lifecycle failures with security impact.
 
-- Vulnerabilities in the OsiNet APK that could compromise user data
-- SQLCipher encryption bypass or key extraction
-- Network traffic leaks (cleartext where encrypted is expected)
-- Proxy/Tor bypass where traffic escapes the configured proxy
-- Permission escalation
+Report vulnerabilities in external services to their respective operators. Root or physical access changes the threat model but does not make every app bug irrelevant; describe the prerequisites precisely.
 
-## Out of Scope
+## Security boundaries
 
-- Vulnerabilities in third-party APIs that OsiNet queries (report those to the API provider)
-- Social engineering attacks
-- Physical device access attacks
-- Root/Magisk-based attacks (rooted devices are inherently compromised)
+The local case/history database uses SQLCipher. Exported files and shared text are outside that database’s encryption. Browser/provider queries disclose data to their recipients. Proxy coverage varies by protocol/tool; anonymity, universal certificate pinning and universal HTTPS are not claimed. HTTP inspection permits cleartext traffic. Image transformation is not a guarantee against reverse-image matching.
 
-## Security Architecture
-
-- **Encryption:** SQLCipher AES-256 for all local investigation data
-- **Proxy:** SOCKS5/HTTP proxy support with Orbot/Tor integration
-- **Network:** All HTTP traffic uses OkHttp with certificate pinning where applicable
-- **Telemetry:** Zero — no analytics, no crash reporting, no phone-home
-- **Permissions:** Minimal required set, no background location, no contacts access
+The distributed 1.0.7 artifact is a debug/testing build, not a production hardening certification. Only that supplied artifact is described here; other releases may differ. This repository contains no application source or signing keys. Keep signing material private and verify release checksums before installing.

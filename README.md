@@ -1,189 +1,111 @@
-<p align="center">
-  <img src="app-icon.png" width="120" height="120" alt="OsiNet Logo"/>
-</p>
+<p align="center"><img src="app-icon.png" width="112" height="112" alt="OsiNet icon"></p>
 
-<h1 align="center">OsiNet</h1>
-<p align="center">
-  <strong>OSINT Investigation Platform for Android</strong>
-</p>
+# OsiNet
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-Android-green?style=flat-square&logo=android" alt="Platform"/>
-  <img src="https://img.shields.io/badge/API-26%2B-blue?style=flat-square" alt="API"/>
-  <img src="https://img.shields.io/badge/Kotlin-2.0-purple?style=flat-square&logo=kotlin" alt="Kotlin"/>
-  <img src="https://img.shields.io/badge/Jetpack_Compose-Material3-teal?style=flat-square" alt="Compose"/>
-  <img src="https://img.shields.io/badge/Paid_APIs-0-brightgreen?style=flat-square" alt="Zero Paid APIs"/>
-  <img src="https://img.shields.io/badge/License-Proprietary-red?style=flat-square" alt="License"/>
-</p>
+**OSINT investigation toolkit for Android — Undercover IT Firm.**
 
-<p align="center">
-  <a href="#download">Download</a> •
-  <a href="#features">Features</a> •
-  <a href="#screenshots">Screenshots</a> •
-  <a href="#architecture">Architecture</a> •
-  <a href="#privacy">Privacy</a> •
-  <a href="#contact">Contact</a>
-</p>
+84 tools across five categories, with case management, evidence, notes and readable offline reports. This repository contains documentation and screenshots. Application source code is not distributed here; APKs belong in **GitHub Releases**.
 
----
-
-**OsiNet** is a self-contained, native Android OSINT (Open Source Intelligence) investigation toolkit with **85+ tools** across 5 categories — all operating on **zero paid APIs**. Built for investigators, penetration testers, security researchers, and OSINT professionals who need a comprehensive mobile toolkit that respects operational security.
-
-Every network request goes directly from your device to the target — no intermediary servers, no telemetry, no cloud dependencies.
-
----
+[Download APK](https://github.com/savaskarofficial/OsiNet/releases/download/apk-v1.0.7/OsiNet-1.0.7-debug.apk) · [Release notes](docs/RELEASE-v1.0.7.md) · [Changelog](CHANGELOG.md) · [Report an issue](https://github.com/savaskarofficial/OsiNet/issues/new/choose)
 
 ## Download
 
-| Version | Min Android | Size | Link |
-|---------|-------------|------|------|
-| **v1.0.0** | Android 8.0 (API 26) | ~32 MB | [`app-debug.apk`](app-debug.apk) |
+| Item | Current packaged build |
+| --- | --- |
+| APK version / versionCode | **1.0.7 / 8** |
+| Build type | Debug / testing build |
+| Android | 8.0+ (API 26); target API 35 |
+| Package | `com.undercoveritfirm.osinet.debug` |
+| APK size | 40.36 MB (40,360,859 bytes) |
+| Release tag | `apk-v1.0.7` |
+| Integrity | [SHA256SUMS.txt](https://github.com/savaskarofficial/OsiNet/releases/download/apk-v1.0.7/SHA256SUMS.txt) |
 
-> **Install:** Enable "Install from unknown sources" in your device settings, then open the APK.
+Download the APK from release **Assets**, not GitHub’s automatic “Source code” archives. Those archives contain only this documentation repository. The links above become available after the maintainer publishes the packaged assets.
 
----
+The existing repository’s historical `v1.1.0` tag is retained. It does not establish the version inside the current APK. This build is tagged `apk-v1.0.7` to avoid rewriting that history or claiming an APK version that was not built.
+
+### Install or update
+
+1. Download the APK and optionally verify its SHA-256 checksum.
+2. Allow installation from your chosen browser/file manager if Android asks.
+3. Export important cases before upgrading. Install over an existing app only when package and signer match. The earlier delivery record identifies the same debug signer for supplied 1.0.5 and 1.0.6 builds; that does not guarantee compatibility with every older APK.
+4. Open OsiNet and grant only the permissions needed for the tools you use.
+
+This is the available debug APK, not a newly built production-signed release. A production build requires the private project and a maintained production signing identity. Do not uninstall or clear data merely to resolve an update error before backing up cases.
 
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/home.jpg" width="230" alt="Home Screen"/>
-  &nbsp;&nbsp;
-  <img src="screenshots/about.jpg" width="230" alt="About"/>
-  &nbsp;&nbsp;
-  <img src="screenshots/settings.jpg" width="230" alt="Settings"/>
+  <img src="screenshots/home.jpg" width="230" alt="OsiNet home and investigation tools">
+  <img src="screenshots/about.jpg" width="230" alt="OsiNet About screen">
+  <img src="screenshots/settings.jpg" width="230" alt="OsiNet settings">
 </p>
 
----
+These are the original supplied device screenshots. They may show an earlier build, tool count or version; they have not been altered to imply a new capture.
 
-## Features
+## Tool catalogue
 
-### 🔴 Investigation (14 tools)
-| Tool | Description |
-|------|-------------|
-| **Auto Recon** | Automated multi-module reconnaissance — DNS, WHOIS, headers, tech fingerprint, Shodan, subdomains, Wayback, threat intel, port scan in one scan |
-| **Digital Footprint** | Risk-scored digital presence analysis across verified API-backed platforms |
-| **Threat Intel** | AlienVault OTX + URLhaus correlation for IPs and domains |
-| **Domain Age** | WHOIS-based registration age + expiry analysis |
-| **Google Dorks** | 107 pre-built dork templates across 12 categories |
-| **Intel Extractor** | Deep link, email, phone, IP extraction from any URL |
-| **Cloud Bucket Hunter** | AWS S3, Azure Blob, GCS bucket enumeration and permission testing |
-| **API Recon** | 50+ endpoint probes (Swagger, OpenAPI, GraphQL introspection, Actuator, .env) |
-| **Tracker ID OSINT** | Google Analytics, Facebook Pixel, and ad network tracker extraction |
-| **Reverse WHOIS** | RDAP (RFC 9082) registrant lookup with ViewDNS + HackerTarget fallback |
-| **Git Secrets** | 40+ secret patterns × 3 search backends (GitHub, Sourcegraph, Google dorks) |
-| **Paste Search** | Pastebin/Ghostbin/Rentry OSINT search links |
-| **Shodan Lookup** | Free InternetDB API — ports, CVEs, hostnames, tags |
-| **IP Blacklist** | 20 DNSBL check against Spamhaus, Barracuda, SORBS, etc. |
+The current 1.0.7 Home catalogue contains these entries. Counts describe available entries, not proof that every remote provider works on every device.
 
-### 🟢 Network Recon (21 tools)
-Ping, Port Scanner (with banner-based service version detection), DNS Lookup, WHOIS, Traceroute (with GeoIP), Subnet Calculator, SSL Certificate Inspector, GeoIP (map), Reverse DNS, Redirect Tracer, Speed Test, Ping Sweep, Latency Monitor, ASN Lookup, Wake-on-LAN, DNS Propagation, Reverse IP, TLS Cipher Analyzer, ARP Table, Tor/Proxy Checker (Orbot integration), Dark Web Search (Ahmia), MQTT IoT Recon
+| Category | Count | Tools |
+| --- | ---: | --- |
+| Investigation | 15 | External Results, Auto Recon, Digital FP, Threat Intel, Domain Age, Google Dorks, Intel Extract, Cloud Bucket, API Recon, Tracker ID, Rev WHOIS, Git Secrets, Paste Search, Shodan, IP Blacklist |
+| Network Recon | 22 | Ping, Port Scan, DNS Lookup, Whois, Traceroute, Subnet Calc, SSL Cert, GeoIP, Reverse DNS, Redirects, Speed Test, Ping Sweep, Latency Mon, ASN Lookup, Wake-on-LAN, DNS Propagation, Reverse IP, TLS Ciphers, ARP Table, Tor/Proxy, Dark Web, MQTT IoT |
+| Web Recon | 16 | Headers, Tech FP, Subdomains, CMS Detect, WAF Detect, Robots.txt, Crawler, Cert Trans, HTTP Methods, CORS Test, Favicon Hash, Site Status, Wayback, Security.txt, Cookies, HTTP Diff |
+| Social / People | 11 | Person Recon, Social Profiler, Breach Check, Username, Email OSINT, Email Dorks, Phone, Email Headers, Name→User, Reverse Image, People Dorks |
+| Utilities | 20 | Hash Gen, Encoder, EXIF Data, MAC Lookup, PassGen, WiFi Info, Device Info, User Agent, Text Analyze, Meta Strip, JSON Format, IP Convert, Timestamp, cURL Gen, Regex Test, UUID Gen, Port Lookup, Crypto Recon, Shadow Calc, Infra Map |
 
-### 🔵 Web Recon (16 tools)
-HTTP Headers, Technology Fingerprint, Subdomain Brute-force, CMS Detection, WAF Detection, Robots.txt Parser, Web Crawler, Certificate Transparency (crt.sh), HTTP Methods Tester, CORS Misconfiguration Scanner, Favicon Hash (Shodan query generator), Site Status Checker, Wayback Machine (with year/month filter), Security.txt Parser, Cookie Analyzer, HTTP Diff
+## Recent improvements
 
-### 🟡 Social / People OSINT (11 tools)
-| Tool | Description |
-|------|-------------|
-| **Person Recon** | Name → username variants → verified platform checks → people search engines → Google dorks → Gravatar email discovery |
-| **Social Profiler** | 22 API-verified platforms + 14 manual-check SPA platforms |
-| **Username Search** | Same 22 verified platforms — API-first, zero false positives |
-| **Breach Check** | XposedOrNot API + Proton Sentinel + Gravatar + deep-search links (HIBP, DeHashed, IntelX, LeakCheck) |
-| **Email OSINT** | MX/SPF/DMARC/DKIM + Gravatar + breach correlation |
-| **Email Dorks** | 70+ dorks across 10 categories (breach sites, code repos, dark web mirrors) |
-| **Phone Lookup** | Carrier prefix DB (BD/PK/IN/US/UK) + OSINT deep-links (WhatsApp, Truecaller, Sync.me, Eyecon) + 8 Google dorks |
-| **Email Header Analyzer** | Hop-by-hop routing, SPF/DKIM/DMARC validation, originating IP extraction |
-| **Name → Username** | Pattern-based username generator from real name |
-| **Reverse Image** | Multi-engine reverse image search (Google, Yandex, TinEye, Bing) |
-| **People Dorks** | 80+ people-finding Google dork templates |
+- Traceroute enriches observed hops while the route is still running; Ping displays live output and retains partial results.
+- Subdomain discovery combines certificate names, user input and DNS checks. Passive names are retained even without A/AAAA answers, with source and resolution status. Discovery remains partial.
+- Person Recon supports saved observations containing source URL and query, linked to the selected case.
+- Dork tools distinguish validated domain filters from keywords and document engine-dependent operators.
+- About and Settings read the installed APK’s actual version metadata.
+- HTML case reports use the app’s dark palette, navigation, result cards, structured fields/tables, investigator notes and print styling.
+- Workbench and Web Research were removed from the user-facing catalogue; retained historical investigation data remains exportable.
 
-### 🛠️ Utilities (20 tools)
-Hash Generator, Encoder/Decoder (Base64/URL/HTML/Hex), EXIF Data Extractor, MAC Vendor Lookup, Password Generator, WiFi Info, Device Info, User Agent Parser, Text Analyzer, Meta Strip (with anti-reverse-image pixel noise), JSON Formatter, IP Format Converter, Unix Timestamp Converter, cURL Generator, Regex Tester, UUID Generator, Port Lookup Database, Crypto Recon (BTC/ETH/LTC/TRX), Shadow Calculator (chronolocation IMINT), Infrastructure Map (Overpass API)
+## Cases and exports
 
-### 📁 Investigation Management
-- **Case Manager** — Create investigation cases, auto-link scan results, attach evidence and notes, STIX 2.1 / JSON / CSV export
-- **Bookmarks** — Save any tool result for later
-- **History** — Full scan history with search
-- **Settings** — DNS server selection, port scan timeout/concurrency, traceroute max hops, crawler depth
+| Record | How to retain it |
+| --- | --- |
+| Managed scan | Select the case **before** launching; final output belongs to that launch-time case, including partial/cancelled status. |
+| Person Recon observation | Press **Save note** with the intended case selected. Unsaved drafts are not evidence. |
+| Local generator / utility output | Use **Save reviewed output**. |
+| Bookmark | Link it to the intended case. Unassigned bookmarks are not automatically included. |
+| Earlier unassigned records | Selecting a case later does not retroactively attach them. |
 
----
+Snapshot HTML and full HTML reports are readable, self-contained static reports. **Full HTML / full case ZIP** include additional retained investigation records; the ZIP includes `report.html`, attachment exports and integrity data. JSON, CSV, TXT and STIX remain data/text formats. HTML is not a live replica of the Android app, and not every intermediate response is preserved.
 
-## Architecture
+## Privacy and security
 
-| Layer | Technology |
-|-------|-----------|
-| **Language** | Kotlin 2.0 |
-| **UI** | Jetpack Compose + Material 3 |
-| **Architecture** | MVVM + Clean Architecture |
-| **DI** | Hilt / Dagger |
-| **Database** | Room + SQLCipher (AES-256 encryption) |
-| **Network** | OkHttp (custom client with SOCKS5/Tor proxy support) |
-| **DNS** | dnsjava (programmatic DNS resolution) |
-| **State** | Kotlin Flow + StateFlow |
-| **Target** | Android API 26–35 |
+Case/history data uses a local Room database with SQLCipher. Exported reports, copied text and files shared with other apps leave that database’s protection. Keep sensitive exports private.
 
-### Security Architecture
-- **SQLCipher 256-bit AES** — All investigation data encrypted at rest
-- **SOCKS5 / HTTP proxy support** — Route traffic through Orbot/Tor
-- **Rate limiting** — Exponential backoff on all external API calls
-- **No telemetry** — Zero analytics, zero crash reporting, zero phone-home
-- **Anti-reverse-image** — MetaStrip adds pixel noise to prevent reverse image tracing of exported screenshots
+Network tools send queries to the chosen targets and third-party DNS, OSINT, search and other providers. These requests disclose query data and connection metadata to the receiving services. Browser handoffs and optional companion configurations introduce their own recipients. Local storage does not make remote queries anonymous.
 
----
+Proxy/Tor behavior depends on the tool, protocol and configuration; do not assume every network path is covered. The manifest permits cleartext traffic for HTTP inspection. Metadata stripping or image pixel changes do not guarantee protection against reverse image search. Rate limits, blocks, provider changes and ambiguous matches can produce incomplete/inconclusive results; absence of a result is not proof of absence or identity.
 
-## Privacy
-
-OsiNet does **not** collect, store, or transmit any personal data to external servers.
-
-- All investigation data is stored **locally** on your device in an encrypted SQLite database
-- Network requests go **directly** from your device to the targets you investigate and to free public OSINT APIs
-- **No analytics SDK**, no Firebase, no Crashlytics, no third-party tracking
-- The app has **no server-side component** — it is entirely self-contained
-
-Free APIs used may have their own privacy policies. We recommend reviewing the terms of service for: ip-api.com, shodan.io (InternetDB), abuse.ch, alienvault.com, archive.org, xposedornot.com.
-
----
+See [SECURITY.md](SECURITY.md) for reporting vulnerabilities. Review diagnostics before posting: redact tokens, account data, target details and evidence you cannot publish.
 
 ## Permissions
 
-| Permission | Why |
-|-----------|-----|
-| `INTERNET` | All OSINT tools require network access |
-| `ACCESS_NETWORK_STATE` | Check connectivity before scans |
-| `ACCESS_WIFI_STATE` / `CHANGE_WIFI_STATE` | WiFi Info tool |
-| `ACCESS_FINE_LOCATION` | GeoIP accuracy + Infrastructure Map |
-| `READ_MEDIA_IMAGES` | EXIF extraction from gallery |
-| `FOREGROUND_SERVICE` | Long-running scans (Auto Recon, Port Scan) |
-| `POST_NOTIFICATIONS` | Scan completion notifications (Android 13+) |
+| Permission | Purpose |
+| --- | --- |
+| Internet / network state | Network tools and connectivity checks |
+| Wi-Fi state / change Wi-Fi state | Wi-Fi information and supported Wi-Fi operations |
+| Fine / coarse location | Android-gated Wi-Fi information and location-aware features; IP geolocation is provider-derived |
+| Media images / legacy storage (through API 32) | Image metadata/file workflows where applicable |
+| Foreground service / data sync | Long-running scan service |
+| Notifications | Scan notifications on supported Android versions |
 
----
+Android/OEM permission limits can restrict ARP, Wi-Fi details, ICMP and long-running work. No privileged backend is implied.
 
-## Legal Disclaimer
+## Validation and limitations
 
-OsiNet is designed for **authorized security research, ethical hacking, and legitimate OSINT investigations only**. Users are solely responsible for ensuring their use of this tool complies with applicable laws and regulations in their jurisdiction.
+The supplied 1.0.7 verification record reports 75 passing JVM tests, successful build/lint with zero lint errors, and report previews at desktop/mobile widths. It also records **39 lint warnings and 6 informational findings**. Physical-device acceptance, document-provider saving, upgrades, large exports and comprehensive provider coverage remain open. This repository refresh does not rebuild or patch the APK.
 
-**Do not** use OsiNet to:
-- Access systems or data without authorization
-- Conduct surveillance on individuals without legal basis
-- Violate any applicable computer fraud, privacy, or wiretapping laws
+## Contact and license
 
-The developer assumes no liability for misuse of this software.
+Developed by **Sharodshahi Al-Amin / Undercover IT Firm**. [Website](https://undercoveritfirm.com) · [Telegram](https://t.me/savaskarofficial) · [GitHub](https://github.com/savaskarofficial).
 
----
-
-## Contact
-
-| | |
-|---|---|
-| **Developer** | Sharodshahi Al-Amin |
-| **Organization** | [Undercover IT Firm](https://undercoveritfirm.com) |
-| **Location** | Dhaka, Bangladesh |
-| **Telegram** | [@savaskarofficial](https://t.me/savaskarofficial) |
-| **GitHub** | [savaskarofficial](https://github.com/savaskarofficial) |
-| **Experience** | 13+ Years in IT & Cybersecurity |
-
----
-
-<p align="center">
-  <strong>Crafted by Undercover IT Firm, Dhaka</strong><br/>
-  <sub>© 2024-2026 Undercover IT Firm. All rights reserved.</sub>
-</p>
+Proprietary software; see [LICENSE](LICENSE). Intended for authorized research and lawful investigations. Android and third-party service names belong to their respective owners.

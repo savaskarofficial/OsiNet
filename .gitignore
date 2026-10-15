@@ -25,3 +25,25 @@ gradle/
 local.properties
 *.keystore
 *.jks
+
+# Release assets are uploaded separately, never committed
+*.apk
+*.aab
+*.apks
+*.xapk
+*.zip
+*.rar
+*.tar
+*.gz
+release-assets/
+
+# Additional private/build material
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.properties.local
+.gradle/
+node_modules/
