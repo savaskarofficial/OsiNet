@@ -1,0 +1,13 @@
+{
+  "versionName": "1.0.7",
+  "versionCode": 8,
+  "package": "com.undercoveritfirm.osinet.debug",
+  "buildType": "debug",
+  "minSdk": 26,
+  "targetSdk": 35,
+  "releaseTag": "apk-v1.0.7",
+  "apkFilename": "OsiNet-1.0.7-debug.apk",
+  "sizeBytes": 40360859,
+  "sha256": "1d0e1d5ec9b8b1c2a6e7c09173b14437bd277e32c68823a0384e7b6dcfc3cbc8",
+  "artifactChanged": false
+}

@@ -1,34 +1,49 @@
 # Changelog
 
-All notable changes to OsiNet will be documented in this file.
+Application changes below are grounded in the supplied 1.0.7 project notes. Repository maintenance is listed separately; it does not change the APK version.
 
-## [1.1.0] — 2026-04-19
+## Repository refresh — 2026-10-15
 
-### 🔧 Critical Fixes — Zero False Positives
+- Replaced the broken root `app-debug.apk` link with versioned GitHub Release links.
+- Documented actual APK version 1.0.7/code 8, debug package, size and SHA-256; staged the existing APK outside the repository tree.
+- Reconciled 84 active Home entries across category counts 15/22/16/11/20.
+- Updated case capture/export behavior, Person Recon notes, discovery limits and runtime version display.
+- Removed unsupported guarantees about false positives, anonymity, complete provider coverage and reverse-image protection.
+- Corrected privacy and permission explanations, and removed unsupported certificate-pinning/all-path proxy claims.
+- Retained supplied screenshots and labeled them as earlier device captures.
+- Added release notes, release metadata, safe clone/push/release instructions and a minimal-repository publishing route.
+- Strengthened binary/source/signing-key ignore rules and updated issue-report guidance.
+- Preserved LICENSE, funding, contacts and historical changelog. Excluded the uploaded `.git` directory from this delivery; existing remote history is retained by cloning before applying files.
 
-- **Username Search / Social Profiler / Person Recon / Digital Footprint** — Completely eliminated false-positive detections. Replaced unreliable `http.head()` HTML scraping with API-first `PlatformValidator` using 22 verified platforms across 3 reliability tiers. Garbage usernames now correctly return 0 results instead of 7+ fake matches.
-- **Wayback Machine** — Fixed `limit=50` cap that showed wrong first/last dates and fabricated "Total: 50". Now uses 4 separate CDX queries for accurate first/last snapshots, approximate total (CDX pages × 150K), and 100 most-recent deduped snapshots. Added `matchType=exact` to prevent prefix-match false positives.
-- **WHOIS Lookup** — Complete rewrite. Now handles both domains AND IPs. Uses RDAP (RFC 9082) as primary with direct registry URLs (VeriSign, APNIC, ARIN, RIPE auto-routed). TCP port 43 kept as fallback only. Shows structured results — no more raw text dumps or browser redirects.
-- **Traceroute** — Fixed RTT showing `* ms` on every intermediate hop. Now measures wall-clock RTT via `System.nanoTime()`. GeoIP resolves live per-hop instead of after trace completes. Whois button restored with in-app IP WHOIS auto-lookup.
-- **Breach Check** — Removed broken `breachdirectory.org` API. Replaced with Proton Sentinel breach API.
-- **Git Secrets** — Rewritten as dork generator. 40+ secret patterns × 3 backends.
-- **Crypto Recon** — TRX lookup switched to TronGrid API.
-- **MAC Lookup** — Strict regex validation before processing.
+## APK 1.0.7 — supplied build, 2026-10-11
 
-### 🚀 Performance
+### Case reports
 
-- **120Hz display support** — Opts in to highest available refresh rate on high-refresh panels.
-- **Eliminated 4× full-screen overdraw** — Added `windowBackground` to themes.xml, removed redundant Surface wrapper.
-- **Home grid optimized** — Memoized filter, stable keys, `@Immutable` data classes, removed double-clip on 91 cards, disabled overscroll glow.
+- Shared readable renderer for snapshot HTML, full HTML and `report.html` within case ZIPs.
+- Dark theme, statistics, navigation, result cards, structured tables, notes and print styling.
+- Raw payloads remain in collapsed sections with SHA-256 integrity values.
+- Full reports read case-linked records transactionally, including retained investigation data; ZIP preserves attachment and JSONL/integrity exports.
+- Escaped imported text, constrained HTTP(S) links and a restrictive report content security policy.
 
-### ✨ New Features
+### Recorded validation
 
-- **Email Dorks** — 70+ dorks across 10 categories
-- **IP WHOIS via RDAP** — Auto-detects IP vs domain. Shows network name, CIDR, registrant, abuse contact from correct RIR (APNIC/ARIN/RIPE).
-- **Wayback Year/Month Filter** — FilterChip rows for year and month with live re-fetch.
-- **Phone Lookup** — Carrier prefix DB (BD/PK/IN/US/UK) with OSINT deep-links.
+- 75 JVM tests passed; debug build/lint succeeded with zero lint errors, 39 warnings and 6 informational findings.
+- Synthetic report previews reviewed at desktop/mobile widths and in print mode.
+- Package/version from APK metadata: `com.undercoveritfirm.osinet.debug`, 1.0.7/code 8.
+- These are prior build-verification results, not tests rerun during this documentation refresh.
 
-## [1.0.0] — 2026-04-17
+## Earlier included maintenance — through 1.0.6
 
-### Initial Release
-85+ OSINT tools across 5 categories — zero paid APIs. Full feature list in README.
+- Live Ping output, partial-result retention and traceroute enrichment as hops arrive.
+- Traceroute export through Android’s save picker.
+- Shared bounded subdomain discovery, passive-name retention and explicit inconclusive/wildcard/source status.
+- Person Recon source/query/observation notes, linked to the selected case; persistent drafts across recreation.
+- Safer dork domain/keyword rendering and revised operator guidance.
+- DNS comparison displays completed results and failure reasons.
+- Installed-version metadata in About/Settings.
+- Workbench/Web Research removed from navigation while preserving historical data.
+- Clearer registration/Reverse WHOIS coverage and shared-host CVE attribution.
+
+## Historical repository versions
+
+The uploaded Git history already contains `v1.1.0`, while its README still advertised 1.0.0. The available APK is actually 1.0.7. No new 1.1.1 APK is fabricated and no existing tag is moved. Publish this build as `apk-v1.0.7` (testing/prerelease). For the original entries, see [archived changelog](docs/legacy-CHANGELOG.md).
