@@ -2,7 +2,7 @@
 
 # OsiNet
 
-**OSINT investigation toolkit for Android — Undercover IT Firm.**
+**OSINT investigation toolkit for Android by Undercover IT Firm.**
 
 84 tools across five categories, with case management, evidence, notes and readable offline reports. This repository contains documentation and screenshots. Application source code is not distributed here; APKs belong in **GitHub Releases**.
 

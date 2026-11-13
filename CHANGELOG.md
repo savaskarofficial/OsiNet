@@ -2,7 +2,7 @@
 
 Application changes below are grounded in the supplied 1.0.7 project notes. Repository maintenance is listed separately; it does not change the APK version.
 
-## Repository refresh — 2026-10-15
+## Repository refresh: 2026-10-15
 
 - Replaced the broken root `app-debug.apk` link with versioned GitHub Release links.
 - Documented actual APK version 1.0.7/code 8, debug package, size and SHA-256; staged the existing APK outside the repository tree.
@@ -15,7 +15,7 @@ Application changes below are grounded in the supplied 1.0.7 project notes. Repo
 - Strengthened binary/source/signing-key ignore rules and updated issue-report guidance.
 - Preserved LICENSE, funding, contacts and historical changelog. Excluded the uploaded `.git` directory from this delivery; existing remote history is retained by cloning before applying files.
 
-## APK 1.0.7 — supplied build, 2026-10-11
+## APK 1.0.7: supplied build, 2026-10-11
 
 ### Case reports
 
@@ -32,7 +32,7 @@ Application changes below are grounded in the supplied 1.0.7 project notes. Repo
 - Package/version from APK metadata: `com.undercoveritfirm.osinet.debug`, 1.0.7/code 8.
 - These are prior build-verification results, not tests rerun during this documentation refresh.
 
-## Earlier included maintenance — through 1.0.6
+## Earlier included maintenance: through 1.0.6
 
 - Live Ping output, partial-result retention and traceroute enrichment as hops arrive.
 - Traceroute export through Android’s save picker.

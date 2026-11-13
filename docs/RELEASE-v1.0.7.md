@@ -1,4 +1,4 @@
-# OsiNet 1.0.7 — readable case reports
+# OsiNet 1.0.7: readable case reports
 
 **Debug / testing APK** · versionCode **8** · Android **8.0+** · package `com.undercoveritfirm.osinet.debug`.
 

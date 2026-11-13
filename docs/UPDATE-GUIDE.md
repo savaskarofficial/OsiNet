@@ -47,7 +47,7 @@ gh release create apk-v1.0.7 \
   ../OsiNet-GitHub-Updated/release-assets/SHA256SUMS.txt \
   --repo savaskarofficial/OsiNet \
   --target "$(gh api repos/savaskarofficial/OsiNet/commits/HEAD --jq .sha)" \
-  --title "OsiNet 1.0.7 — readable case reports (testing)" \
+  --title "OsiNet 1.0.7: readable case reports (testing)" \
   --notes-file docs/RELEASE-v1.0.7.md \
   --prerelease
 gh release view apk-v1.0.7 --repo savaskarofficial/OsiNet --web
@@ -68,7 +68,7 @@ gh release upload apk-v1.0.7 \
   ../OsiNet-GitHub-Updated/release-assets/SHA256SUMS.txt \
   --repo savaskarofficial/OsiNet --clobber
 gh release edit apk-v1.0.7 --repo savaskarofficial/OsiNet \
-  --title "OsiNet 1.0.7 — readable case reports (testing)" \
+  --title "OsiNet 1.0.7: readable case reports (testing)" \
   --notes-file docs/RELEASE-v1.0.7.md --prerelease
 ```
 
